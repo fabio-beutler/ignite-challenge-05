@@ -4,6 +4,7 @@ import { FiCalendar, FiUser } from 'react-icons/fi';
 import Prismic from '@prismicio/client';
 import NextLink from 'next/link';
 import { useState } from 'react';
+import Head from 'next/head';
 import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
@@ -46,6 +47,9 @@ export default function Home({
   }
   return (
     <main className={`${styles.main} ${commonStyles.container}`}>
+      <Head>
+        <title>spacetravelling.</title>
+      </Head>
       <img src="/images/Logo.svg" alt="Logo" />
       <section className={styles.posts}>
         {postsPagination.results.map(post => (
